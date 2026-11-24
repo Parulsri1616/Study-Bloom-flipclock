@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Monochrome Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #A1A1AA;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525B;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3F3F46;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #71717A;
+}
+
+/* Flip Clock 3D Animation Styles */
+.flip-unit-container {
+  display: block;
+  position: relative;
+  perspective: 600px;
+  user-select: none;
+}
+
+.flip-card-upper,
+.flip-card-lower {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-upper {
+  align-items: flex-end;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.flip-card-lower {
+  align-items: flex-start;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .flip-card-upper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+.dark .flip-card-lower {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Digits positioning inside half cards */
+.digit-upper {
+  transform: translateY(50%);
+  line-height: 1;
+}
+
+.digit-lower {
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+/* 3D Flip Leaf Animation */
+.flip-leaf-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  z-index: 2;
+}
+
+.flip-leaf-back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform-origin: top;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 2;
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.animate-flip-top {
+  animation: flipTop 240ms ease-in forwards;
+}
+
+.animate-flip-bottom {
+  animation: flipBottom 240ms ease-out 230ms forwards;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 228, 231, 0.9);
+}
+
+.dark .glass-panel {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 39, 42, 0.9);
+}

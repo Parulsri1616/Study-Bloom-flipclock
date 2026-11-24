@@ -1,0 +1,86 @@
+import { SubjectConfig } from '../types';
+
+export const GATE_CSE_SUBJECTS: SubjectConfig[] = [
+  {
+    id: 'algorithms',
+    name: 'Algorithms',
+    color: '#F4F4F5',
+    textColor: '#18181B',
+    borderColor: '#D4D4D8',
+    iconName: 'Binary',
+  },
+  {
+    id: 'os',
+    name: 'Operating Systems',
+    color: '#E4E4E7',
+    textColor: '#09090B',
+    borderColor: '#A1A1AA',
+    iconName: 'Cpu',
+  },
+  {
+    id: 'dbms',
+    name: 'DBMS',
+    color: '#FAFAFA',
+    textColor: '#18181B',
+    borderColor: '#E4E4E7',
+    iconName: 'Database',
+  },
+  {
+    id: 'cn',
+    name: 'Computer Networks',
+    color: '#F4F4F5',
+    textColor: '#27272A',
+    borderColor: '#D4D4D8',
+    iconName: 'Network',
+  },
+  {
+    id: 'toc',
+    name: 'Theory of Computation',
+    color: '#E4E4E7',
+    textColor: '#09090B',
+    borderColor: '#A1A1AA',
+    iconName: 'GitBranch',
+  },
+  {
+    id: 'coa',
+    name: 'Computer Organization',
+    color: '#FAFAFA',
+    textColor: '#18181B',
+    borderColor: '#D4D4D8',
+    iconName: 'Layers',
+  },
+  {
+    id: 'engg-math',
+    name: 'Engineering Mathematics',
+    color: '#F4F4F5',
+    textColor: '#09090B',
+    borderColor: '#A1A1AA',
+    iconName: 'Sigma',
+  },
+  {
+    id: 'c-prog',
+    name: 'Programming in C',
+    color: '#E4E4E7',
+    textColor: '#18181B',
+    borderColor: '#D4D4D8',
+    iconName: 'Code2',
+  },
+  {
+    id: 'revision',
+    name: 'General Revision',
+    color: '#FAFAFA',
+    textColor: '#27272A',
+    borderColor: '#E4E4E7',
+    iconName: 'BookMarked',
+  },
+  {
+    id: 'other',
+    name: 'Other',
+    color: '#F4F4F5',
+    textColor: '#52525B',
+    borderColor: '#D4D4D8',
+    iconName: 'Sparkles',
+  },
+];
+
+export const DEFAULT_SUBJECT = GATE_CSE_SUBJECTS[0].name;
