@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { soundManager } from '../../utils/audioEngine';
 
 interface FlipCardProps {
   digit: string;
@@ -17,9 +16,6 @@ export const FlipCard: React.FC<FlipCardProps> = ({ digit, size = 'normal' }) =>
       setPreviousDigit(currentDigit);
       setCurrentDigit(digit);
       setIsFlipping(true);
-
-      // Play soft mechanical tick
-      soundManager.playFlipTick();
 
       if (timeoutRef.current !== null) {
         clearTimeout(timeoutRef.current);
